@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./Css_Designs/Cards.css">
+    <link rel="stylesheet" href="./Css_Designs/thirdSection.css">
+    <link rel="stylesheet" href="./Css_Designs/FourthSection.css">
+    <link rel="stylesheet" href="./Css_Designs/Fifth.css">
+    <link rel="stylesheet" href="./Css_Designs/ColWidth.css">
+    <!-- <script src="./Temp_scripts/Sphere.js"></script> -->
+    <title>CrimeCapture</title>
+</head>
+<body>
+    
+   
+
+
+    <section id="FirstSection" class="FirstSection">
+    
+        <div class="TitleImage">
+            <img class="image" src="./Images/Logo/Logo.png" alt="LogoImage">
+            <h1 class="TitleName">CrimeCapture</h1>
+        </div>
+           
+        <div>
+            <p Class="FirstSectionDesc">Detect with precision, act with speed.</p>
+            <input class="FirstSectionButton" type="button"  onclick="location.href='#ThirdSection'" value="Know more" >
+        </div>
+
+
+        <div class="FirstSectionImage">
+            <img class="backgroundImg" src="./Images/backgrounds.png" alt="" srcset="">
+            <!-- <img class="backgroundImg"src="./Images/background2.png" alt="" srcset=""> -->
+        </div>
+
+       
+    </section>
+
+
+
+    <section id="SecondSection">
+     
+        <div>
+            <h1 Class="SecondSectionDesc">Instantly detect and take action</h1> 
+<!-- 
+            <a href="./Violence/app_violoence.html" class="SecondSectionButtonFight">
+                <img class="SecondSectionButtonFight" src="./Images/Accident2.jpg" alt="Fight">
+            </a> -->
+            <!-- <a href="./Violence/app_violoence.html" class="SecondSectionButtonAccident">Fight</a>
+            <a href="./Accident/accident.html" class="SecondSectionButtonAccident">Accident</a>
+            <a href="./Fire/fire.html" class="SecondSectionButtonFire">Fire</a>
+            <a href="./Weapon/weapon.html" class="SecondSectionButtonWeapon">Weapon</a> -->
+        </div>
+
+        <div class="tiles">
+            <a href="./Accident/accident.html"  class="link"> <div class="item item--1">
+                
+                <img src="https://img.icons8.com/ios-filled/50/null/crashed-car.png"/>
+                <i class="fi fi-ss-boxing-glove"></i>
+              <span class="quantity"> ACCIDENT  </span>
+              <span class="text text--1"> Report Accident </span>
+            </div></a>
+
+            <a href="./Violence/app_violoence.html"  class="link"><div class="item item--2">
+                <img src="https://img.icons8.com/ios-filled/50/000000/action.png"/>
+                  <span class="quantity"> FIGHT </span> 
+              <span class="text text--2"> Report Fight </span>
+            </div></a>
+
+            <a href="./Fire/fire.html"  class="link"><div class="item item--3">
+                <img src="https://img.icons8.com/ios-glyphs/50/null/fire-element--v1.png"/>
+                   <span class="quantity">FIRE </span>
+              <span class="text text--3"> Report Fire </span>
+            </div> </a>
+
+            <a href="./Weapon/weapon.html" class="link"><div class="item item--4">
+                <img src="https://img.icons8.com/ios-filled/50/null/sniper-rifle.png"/>
+                    <span class="quantity">WEAPONS</span>
+              <span class="text text--4"> Report Weapons </span>
+            </div></a>
+          </div> 
+      
+          <div class="SecondSectionImage">
+            <img class="IphoneImage" src="./Images/Iphone mockup.png" alt="" srcset="">
+           </div>
+
+
+      </section>
+    
+
+
+
+
+
+<section id="FourthSection">
+
+    <div class="TechnologiesTitle">
+        <h1>Our Technologies</h1>
+
+    </div>
+    <div></div>
+    <div class="card">
+        <div class="card1">
+            <div id="container">
+                <span id="text1"></span>
+                <span id="text2"></span>
+            </div>
+            
+            <svg id="filters">
+                <defs>
+                    <filter id="threshold">
+                        <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                                0 1 0 0 0
+                                                0 0 1 0 0
+                                                0 0 0 255 -140" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<section id="fifthSection">
+
+<div class="FifthTitleDiv">
+    <h1  class="FifthTitle">Our Skilled Professionals</h1>
+</div>
+
+<div class="Profile">
+
+    <div >
+        <a href="./Resume/Surve Sarthak.pdf" download>  <img class="sarthakImage" src="./Images/Profiles/Sarthak.png" alt=""  ></a>
+       <h1 class="SarthakSurve">Bhushan Patil </h1>
+       
+       
+    </div>
+
+    <div >
+        <img class ="AtharvImage" src="./Images/Profiles/Atharv.png" alt=""><br>
+       <h1 class="AtharvKalekar">Avadhuth Patil</h1>
+       
+    </div>
+
+    <div >
+        <img class ="AmmarImage" src="./Images/Profiles/Ammar.png" alt=""><br>
+       <h1 class="AmmarSakriwala">Babasaheb Nagile</h1>
+       
+    </div>
+    <div >
+        <img class ="KaranImage" src="./Images/Profiles/Karan.png" alt=""><br>
+       <h1 class="KaranDabare">Vishal Lokhare</h1>
+       
+    </div>
+
+
+</div>
+
+<div class="MiniRobot">
+    <div class="price-tag">Click On Gravatar To Download Resume</div>
+</div>
+</section>
+
+
+
+<section id="ThirdSection">
+    <div class=" AboutusTitle"><h1>About Us</h1></div>
+    <div> <img class="ThirdSectionImage" src="./Images/Shapes.png" alt="" srcset=""></div>
+     <div class="aboutUsDetails">
+         <p>Welcome to our website! We are a team of dedicated individuals who are passionate about making the world a safer 
+             place. Our goal is to provide innovative solutions to some of the most pressing safety and security challenges faced by communities around the world. Our team is made up of experts in various fields, including technology, engineering, and public safety. We work closely together to develop cutting-edge tools and technologies that can help people stay safe and respond quickly in emergency situations.
+         </p><p>Thank you for visiting our website. We hope that you find our tools and resources helpful and that you will join us in our mission to make the world a safer place.</p>
+ 
+     </div>
+ </section>
+ 
+
+<section id="SixthSection">
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./Css_Designs/temp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
+<script src="./Temp_scripts/Sphere.js"></script>
+<script src="./Geolocation/geo.js" ></script>
+<!-- <script src="./Sms/sms.js" type="module"></script> -->
+<script type="module" src="./index.js"></script>
+
+</body>
+</html>

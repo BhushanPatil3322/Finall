@@ -1,0 +1,362 @@
+/* This is the second Section card design */
+
+
+
+#SecondSection{
+    position: relative;
+     background: linear-gradient(90deg, rgba(143,177,248,1) 0%, rgba(147,194,239,1) 47%, rgba(218,193,249,1) 66%, rgba(184,186,207,1) 83%, rgba(232,196,196,1) 100%);
+   /* width: 95rem;  */
+    width: 100%;
+    height: 46.6rem; 
+    top:46.5rem;
+
+}
+
+.SecondSectionDesc{
+    position: absolute;
+    top:5rem;
+    left: 5rem;
+    width: 60rem;
+    font-weight: bold;
+    /* height: 10rem; */
+    letter-spacing: 2px;
+    font-size: 4rem;
+    color: #000000;
+    line-height: 80px;
+    font-size:2.7rem;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+ .IphoneImage{
+    position: absolute;
+    height: 42rem;
+    left: 55rem;
+    top:4rem;
+ } 
+/* 
+
+
+
+.SecondSectionButtonFight{
+    position: relative;
+    display: inline-block;
+    left:6rem;
+    top:10rem;
+    height:10rem;
+    
+}
+.SecondSectionButtonAccident{
+    position: relative;
+    display: inline-block;
+    left:8rem;
+    top:24rem;
+    border-radius: 45px;
+    background-color: #000000;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 190px;
+    height:70px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.SecondSectionButtonFire{
+    position: relative;
+    display: inline-block;
+    left:10rem;
+    top:24rem;
+    border-radius: 45px;
+    background-color: #000000;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 190px;
+    height:70px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.SecondSectionButtonWeapon{
+    
+    position: relative;
+    display: inline-block;
+    left:12rem;
+    top:24rem;
+    border-radius: 45px;
+    background-color: #000000;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 190px;
+    height:70px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+} */
+
+
+.tiles {
+    position: absolute;
+    left:15rem;
+    top:20rem;
+    width: 20rem;
+    height: 20rem;
+    background-color: transparent;
+    /* color: white; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    overflow: visible;
+    border: none;
+   }
+   
+   .tiles .item {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .item:hover {
+    transform: scale(0.95);
+    transition: all 0.3s;
+   }
+   
+   .item svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 7px;
+   }
+   
+   .item--1 {
+    background: #c7c7ff;
+   }
+   
+   .item--2 {
+    background: #ffd8be;
+   }
+   
+   .item--3 {
+    background: #a9ecbf;
+   }
+   
+   .item--4 {
+    background: #f3bbe1;
+   }
+   
+   .quantity {
+    font-size: 25px;
+    font-weight: 600;
+   }
+   
+   .text {
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 600;
+   }
+   
+   .text--1 {
+    color: rgba(149,149,255,1);
+   }
+   
+   .text--2 {
+    color: rgba(252,161,71,1);
+   }
+   
+   .text--3 {
+    color: rgba(66,193,110,1);
+   }
+   
+   .text--4 {
+    color: rgba(220,91,183,1);
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+@media screen and (max-width: 450px) {
+    body{
+        font-family: 'Poppins', sans-serif;
+        max-width: 100rem;
+        overflow-x: hidden;
+    }
+
+    .SecondSection{
+        position: relative;
+         /* background: linear-gradient(90deg, rgba(143,177,248,1) 0%, rgba(147,194,239,1) 47%, rgba(218,193,249,1) 66%, rgba(184,186,207,1) 83%, rgba(232,196,196,1) 100%); */
+       /* width: 95rem;  */
+       
+       width: 100rem;
+        height: 46.6rem; 
+        top:46.5rem;
+    
+    }
+    .SecondSectionDesc{
+        position: absolute;
+        top:2rem;
+        left: 1rem;
+        width: 10rem;
+        z-index: 1;
+        font-weight: bold;
+        /* height: 10rem; */
+        letter-spacing: 0px;
+        color: #000000;
+        line-height:40px;
+        font-size:2em;
+    }
+
+    .IphoneImage{
+        position: absolute;
+        height: 20rem;
+       
+        left:9rem;
+        top:4rem;
+        z-index:0;
+     } 
+     .tiles {
+        position: absolute;
+        left:3rem;
+        top:20rem;
+        width: 20rem;
+        z-index: 1;
+        height: 18rem;
+        background-color: transparent;
+        /* color: white; */
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 15px;
+        overflow: visible;
+        border: none;
+       }
+       
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+@media screen and (max-width: 375px) {
+    body{
+        font-family: 'Poppins', sans-serif;
+        max-width: 100rem;
+        overflow-x: hidden;
+    }
+
+    .SecondSection{
+        position: relative;
+         /* background: linear-gradient(90deg, rgba(143,177,248,1) 0%, rgba(147,194,239,1) 47%, rgba(218,193,249,1) 66%, rgba(184,186,207,1) 83%, rgba(232,196,196,1) 100%); */
+       /* width: 95rem;  */
+       
+       width: 100rem;
+        height: 46.6rem; 
+        top:46.5rem;
+    
+    }
+    .SecondSectionDesc{
+        position: absolute;
+        top:2rem;
+        left: 1rem;
+        width: 10rem;
+        z-index: 1;
+        font-weight: bold;
+        /* height: 10rem; */
+        letter-spacing: 0px;
+        color: #000000;
+        line-height:40px;
+        font-size:2em;
+    }
+
+    .IphoneImage{
+        position: absolute;
+        height: 20rem;
+       
+        left:9rem;
+        top:4rem;
+        z-index:0;
+     } 
+     .tiles {
+        position: absolute;
+        left:2rem;
+        top:20rem;
+        width: 20rem;
+        z-index: 1;
+        height: 18rem;
+        background-color: transparent;
+        /* color: white; */
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 15px;
+        overflow: visible;
+        border: none;
+       }
+}
+
+@media screen and (max-width: 350px) {
+    .tiles {
+        position: absolute;
+        left:2rem;
+        top:20rem;
+        width: 15rem;
+        z-index: 1;
+        height: 12rem;
+        background-color: transparent;
+        /* color: white; */
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 15px;
+        overflow: visible;
+        border: none;
+       }
+}

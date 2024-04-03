@@ -1,0 +1,194 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+  }
+  
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+
+/* FirstSection */
+
+#FirstSection{
+    
+    position: absolute;
+    background: linear-gradient(90deg, rgba(233,241,240,1) 0%, rgba(179,213,224,1) 47%, rgb(166, 148, 227) 66%, rgb(195, 132, 152) 83%, rgb(215, 115, 72) 100%);
+    left: -1px;
+    top: -1px;
+    /* width: 95rem;  */
+   width: 100%;
+    height: 46.6rem; 
+ 
+}
+
+
+.TitleImage{
+    display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  letter-spacing: 5px;
+  color: #000000;
+  font-weight:800;
+}
+.image{
+    height: 10rem;
+    width: 12.2rem;
+   
+}
+
+
+.FirstSectionDesc{
+    position: absolute;
+    margin-top:5rem;
+    margin-left: 18rem;
+    width: 30rem;
+    font-weight: bold;
+    /* height: 10rem; */
+    letter-spacing: 2px;
+    font-size: 4rem;
+    color: #000000;
+    line-height: 80px;
+    font-size:4.4rem;
+}
+.FirstSectionButton{
+    position: absolute;
+    display: inline-block;
+    left:19rem;
+    top:39rem;
+    border-radius: 45px;
+    background-color: #000000;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 190px;
+    height:70px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.FirstSectionImage{
+    position: absolute;
+    left:35rem;
+    top:7rem;
+    z-index: 1;
+}
+.backgroundImg{
+    height:45rem;
+    width: auto;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    body{
+        font-family: 'Poppins', sans-serif;
+        max-width: 100%;
+        max-height: 100%;
+        overflow-x: hidden;
+    }
+    
+
+    
+#FirstSection{
+  background-color: red;
+ 
+}
+
+.TitleImage{
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+    letter-spacing: 2px;
+    color: black;
+    font-weight:200;
+}
+
+.image{
+    height: 5rem;
+    width: 6rem;
+   
+}
+.FirstSectionDesc{
+    position: absolute;
+    margin-top:4rem;
+    margin-left: 2rem;
+    width: 20rem;
+    z-index: 1;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #000000;
+    line-height: 80px;
+    font-size:4rem;
+}
+.FirstSectionButton{
+    position: absolute;
+    display: inline-block;
+    left:2rem;
+    top:35rem;
+    border-radius: 45px;
+    background-color: #000000;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 16px;
+    width: 140px;
+    height:60px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.FirstSectionImage{
+    position: absolute;
+    left:4rem;
+    top:9rem;
+    z-index: 0;
+}
+.backgroundImg{
+    height:30rem;
+    width: auto;
+    
+}
+
+
+
+  }
+

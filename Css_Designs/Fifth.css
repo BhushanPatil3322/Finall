@@ -1,0 +1,372 @@
+#fifthSection{
+    position: relative;
+    color: white;
+    /* background: linear-gradient(90deg, rgba(143,177,248,1) 0%, rgba(147,194,239,1) 47%, rgba(218,193,249,1) 66%, rgba(184,186,207,1) 83%, rgba(232,196,196,1) 100%); */
+   background-color: white;
+    /* width: 95rem;  */
+    width: 100%;
+    height: 46.65rem; 
+    top:46.5rem;
+}
+
+
+
+.FifthTitle{
+    position: absolute;
+    top:5rem;
+    left: 5rem;
+    width: 60rem;
+    font-weight: bold;
+    /* height: 10rem; */
+    letter-spacing: 2px;
+    font-size: 4rem;
+    color: #000000;
+    line-height: 80px;
+    font-size:3.4rem;
+}
+
+
+.Profile{
+    position: absolute;
+    top:17rem;
+    left: 5rem;
+
+}
+.SarthakSurve{
+    position: absolute;
+    color:#000000;
+    top: 15rem;
+    left:1rem;
+    font-size: 2rem;
+     width: 15rem;
+}
+.AtharvKalekar{
+    position: absolute;
+    color:#000000;
+    top: 15rem;
+    left:25rem;
+    font-size: 2rem;
+     width: 15rem;
+
+}
+.AmmarSakriwala{
+    position: absolute;
+    color:#000000;
+    top: 15rem;
+    left:48rem;
+    font-size: 2rem;
+     width: 19rem;
+}
+.KaranDabare{
+    position: absolute;
+    color:#000000;
+    top: 15rem;
+    left:73.3rem;
+    font-size: 2rem;
+     width: 15rem;
+}
+
+
+
+
+
+
+
+
+:root {
+    --price-tag-background: linear-gradient(90deg, rgba(143,177,248,1) 0%, rgb(105, 173, 236) 47%, rgb(211, 196, 230) 66%, rgb(140, 145, 200) 83%, rgb(223, 128, 128) 100%);
+ 
+    --price-tag-height: 2rem;
+}
+
+.price-tag {
+    background: var(--price-tag-background);
+    color: black;
+    font-weight: bold;
+
+    /* Center the price */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    /* Used to position the triangle */
+    position: relative;
+
+    /* Size */
+    height: var(--price-tag-height);
+
+    /* Spacing */
+    padding: 0.25rem 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+.sarthakImage{
+    position: absolute;
+    width: 15rem;
+}
+.AtharvImage{
+    position: absolute;
+    width: 15rem;
+    top: -0.1em;
+    left:25rem;
+}
+.AmmarImage{
+    position: absolute;
+    width: 15rem;
+    top: -0.1em;
+    left:50rem;
+}
+.KaranImage{
+    position: absolute;
+    width: 15rem;
+    top: -0.1em;
+    left:73rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 450px) {
+
+
+
+    .FifthTitle{
+        position: absolute;
+        top:5rem;
+        left: 1rem;
+        width: 10rem;
+        font-weight: bold;
+        /* height: 10rem; */
+        letter-spacing: 2px;
+        font-size: 4rem;
+        color: #000000;
+        line-height: 40px;
+        font-size:2.4rem;
+    }
+    
+    
+    .Profile{
+        position: absolute;
+        top:17rem;
+        left: 2rem;
+    
+    }
+    .SarthakSurve{
+        position: absolute;
+        color:#000000;
+        top: 8rem;
+        left:1rem;
+        font-size:1em;
+         width: 7.4rem;
+    }
+    .AtharvKalekar{
+        position: absolute;
+        color:#000000;
+        top: 8rem;
+        left:13.5rem;
+        font-size:1em;
+         width: 8rem;
+    
+    }
+    .AmmarSakriwala{
+        position: absolute;
+        color:#000000;
+        top: 20rem;
+        left:-0.2rem;
+        font-size:1em;
+         width: 10rem;
+    }
+    .KaranDabare{
+        position: absolute;
+        color:#000000;
+        top: 20rem;
+        left:13.5rem;
+        font-size:1em;
+         width: 8rem;
+    }
+    
+    .sarthakImage{
+        position: absolute;
+        width: 8rem;
+    }
+    .AtharvImage{
+        position: absolute;
+        width: 8em;
+        left:13rem;
+    }
+    .AmmarImage{
+        position: absolute;
+        width: 8rem;
+        top: 12rem;
+        left:0.1rem;
+    }
+    .KaranImage{
+        position: absolute;
+        width: 8rem;
+        top: 12rem;
+        left:13rem;
+    }
+      
+
+
+    :root {
+    --price-tag-background: linear-gradient(90deg, rgba(143,177,248,1) 0%, rgb(105, 173, 236) 47%, rgb(211, 196, 230) 66%, rgb(140, 145, 200) 83%, rgb(223, 128, 128) 100%);
+ 
+    --price-tag-height: 2rem;
+}
+
+.price-tag {
+    background: var(--price-tag-background);
+    color: black;
+    font-weight: bold;
+    top: 44.6rem;
+    /* Center the price */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    /* Used to position the triangle */
+    position: relative;
+
+    /* Size */
+    height: var(--price-tag-height);
+
+    /* Spacing */
+    padding: 0.25rem 0.5rem;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 370px) {
+
+
+
+    
+    
+    .Profile{
+        position: absolute;
+        top:17rem;
+        left: 1rem;
+    
+    }}
+
+
+
+
+
+
+
+
+
+
+    @media screen and (max-width: 351px) {
+
+
+
+    
+    
+        .Profile{
+            position: absolute;
+            top:17rem;
+            left: 1rem;
+        
+        }
+    
+    
+        .SarthakSurve{
+            position: absolute;
+            color:#000000;
+            top: 6rem;
+            left:0rem;
+            font-size:1em;
+            width: 7.4rem;
+        }
+        .AtharvKalekar{
+            position: absolute;
+            color:#000000;
+            top: 6rem;
+            left:10.5rem;
+            font-size:1em;
+             width: 7.7rem;
+        
+        }
+        .AmmarSakriwala{
+            position: absolute;
+            color:#000000;
+            top: 16.4rem;
+            left:1rem;
+            font-size:1em;
+             width: 9rem;
+        }
+        .KaranDabare{
+            position: absolute;
+            color:#000000;
+            top: 16.4rem;
+            left:10.5rem;
+            font-size:1em;
+             width: 8rem;
+        }
+        
+        .sarthakImage{
+            position: absolute;
+            width: 6rem;
+        }
+        .AtharvImage{
+            position: absolute;
+            width: 6em;
+            left:11rem;
+        }
+        .AmmarImage{
+            position: absolute;
+            width: 6rem;
+            top: 10rem;
+            left:0.1rem;
+        }
+        .KaranImage{
+            position: absolute;
+            width: 6rem;
+            top: 10rem;
+            left:11rem;
+        }
+
+
+        
+.price-tag {
+   visibility: hidden;
+}
+          }

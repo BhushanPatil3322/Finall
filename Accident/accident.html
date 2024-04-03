@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="accident.css">
+    <script src="accident.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.6/tailwind.min.css">
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <title>Report Accident</title>
+</head>
+
+<body>
+
+	
+	<!-- <form id="inputForm">
+		<div class="hidden">
+			<div class="header__grid">
+				<img class="header__logo" src="https://uploads-ssl.webflow.com/5f6bc60e665f54545a1e52a5/6143750f1177056d60fc52d9_roboflow_logomark_inference.png" alt="Roboflow Inference">
+				<div>
+					<label class="header__label" for="model">Model</label>
+					<input class="input" type="text" id="model" />
+				</div>
+				<div>
+					<label class="header__label" for="version">Version</label>
+					<input class="input" type="number" id="version" />
+				</div>
+				<div>
+					<label class="header__label" for="api_key">API Key</label>
+					<input class="input" type="text" id="api_key" />
+				</div>
+			</div>
+		</div> -->
+
+
+
+
+
+
+		<div class="hidden">
+			<div class="content__grid">
+				<div class="col-12-s6-m4" id="method">
+					<label class="hidden">Upload Method</label>
+					<div>
+						<button data-value="upload" id="computerButton" class="bttn left fill active">Upload</button>
+						<button data-value="url" id="urlButton" class="bttn right fill">URL</button>
+					</div>
+			</div>
+
+				<div class="hidden" id="fileSelectionContainer">
+					<label class="input__label" for="file">Select File</label>
+					<div class="hidden">
+						<input class="input input--left flex-1" type="text" id="fileName" disabled />
+						<button id="fileMock" class="bttn right active">Browse</button>
+					</div>
+					<input style="display: none;" type="file" id="file" />
+				</div>
+
+
+			<div class="col-12-m8" id="urlContainer">
+					<label class="input__label" for="file">Enter Image URL</label>
+					<div class="flex">
+						<input type="text" id="url" placeholder="https://path.to/your.jpg" class="input"/><br>
+					</div>
+				</div>
+				<div class="col-6-m3" id="hidden">
+					<label class="input__label">Inference Result</label>
+					<div>
+						<button id="jsonButton" data-value="json" class="bttn right fill active">JSON</button>
+					</div>
+				</div>
+							<div class="col-12">
+				
+				</div>
+			</div>
+
+			<button type="submit" value="Run Inference" class="bttn__primary">Run Inference</button>
+
+			<div class="result" id="resultContainer">
+				
+			</div>
+		</div>
+	</form>
+
+
+
+<!-- ############################################## -->
+
+
+
+
+
+	<form class="modal" id="inputForm" >
+		<div class="hidden">
+			<div class="header__grid">
+				<img class="header__logo" src="https://uploads-ssl.webflow.com/5f6bc60e665f54545a1e52a5/6143750f1177056d60fc52d9_roboflow_logomark_inference.png" alt="Roboflow Inference">
+				<div>
+					<label class="header__label" for="model">Model</label>
+					<input class="input" type="text" id="model" />
+				</div>
+				<div>
+					<label class="header__label" for="version">Version</label>
+					<input class="input" type="number" id="version" />
+				</div>
+				<div>
+					<label class="header__label" for="api_key">API Key</label>
+					<input class="input" type="text" id="api_key" />
+				</div>
+			</div>
+		</div>
+		
+
+
+
+			<div class="content">
+			  <span class="title">Upload a File</span>
+			  <p class="message">Select a file to upload from your computer or device.</p>
+			  
+
+			  <div class="actions">
+				
+				<label for="file" class="button upload-btn">
+					<!-- <input   type="file" id="file" /> -->
+				  <input hidden="" type="file" id="file">Uplode your Image 
+				  
+				
+					
+				</div> 
+				
+				 
+				</label>
+			<button type="submit" value="Run Inference" class="bttn__primary">Submit </button>
+			<div class="col-6-m3 relative">
+				<label class="input__label" for="confidence" style="display: none;" >How confident are you?</label>
+				<!-- <i class="fa-regular fa-face-crown"></i> -->
+					<input type="number" id="confidence" value="10" max="100" accuracy="2" min="0" class="input input__icon" style="display: none;"/></div>
+					
+								  
+				</div>
+			  </div>
+			  <div class="result">
+				<div class="divider"></div>
+				<!-- <div class="result__header">
+					<h3 class="headline">Result</h3>
+					<a href="#">Copy Code</a>
+				</div> -->
+				<div class="col-6-m3" id="hidden">
+					<label class="input__label">Inference Result</label>
+					<div>
+						<button id="jsonButton" data-value="json" class="bttn right fill active">JSON</button>
+					</div>
+				</div>
+				
+				<pre id="output" #class="codeblock"> </pre>
+			  </div>
+		</div>
+	  </form>
+	
+
+
+
+	  <div>
+		<img class="CarAccidentImage" src="../Images/CarAccident.png" alt="" srcset="">
+	  </div>
+
+
+
+	 
+</body>
+
+<script src="accident.js"></script>
+</html>
+
+
+

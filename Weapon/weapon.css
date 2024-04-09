@@ -76,6 +76,46 @@ padding: 1rem;
 width: 100%;
 }
 
+
+
+
+.question{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    margin-left: 20px;
+     /* Added margin-bottom for gap between questions */
+  }
+  .accident_form{
+      position: absolute;
+      z-index: 10;
+      width: 41%;
+      top: 15rem;
+      left: 10rem;
+  }
+
+  .accident_form {
+    padding: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+/* 
+.options label input[type="radio"] {
+    margin-right: 10px;
+} */
+
 .content__grid {
 display: grid;
 grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -228,12 +268,13 @@ background-color: #000000;
 }
 
 .codeblock {
+    z-index: 10;
 border-width: 1px;
 border-color: #cbd5e0;
 border-radius: 0.25rem;
 display: block;
 padding: 0.75rem;
-background-color: white;
+/* background-color: white; */
 }
 
 #urlContainer {
@@ -409,6 +450,8 @@ position: absolute;
 top: 15rem;
 left: 4.8rem;
 width: 60rem;
+opacity: 0.2; 
+
 }
 
 

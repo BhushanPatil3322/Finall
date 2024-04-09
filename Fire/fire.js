@@ -1,4 +1,42 @@
 
+// Declare the selectedValues object outside any function or event listener
+var selectedValues = {};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the radio buttons for the scale of accident
+    const majorRadio = document.getElementById('major');
+    const minorRadio = document.getElementById('minor');
+    const mediumRadio = document.getElementById('medium');
+
+    // Add event listeners to each radio button
+    majorRadio.addEventListener('change', logSelectedAccidentScale);
+    minorRadio.addEventListener('change', logSelectedAccidentScale);
+    mediumRadio.addEventListener('change', logSelectedAccidentScale);
+
+    // Function to log the selected scale of accident
+    function logSelectedAccidentScale(event) {
+        const selectedAccidentScale = event.target.value;
+        selectedValues['accidentScale'] = selectedAccidentScale;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+
+    // Get the radio buttons for the need of first aid
+    const yesRadio = document.getElementById('yes');
+    const noRadio = document.getElementById('no');
+
+    // Add event listeners to each radio button
+    yesRadio.addEventListener('change', logNeedOfFirstAid);
+    noRadio.addEventListener('change', logNeedOfFirstAid);
+
+    // Function to log the need of first aid
+    function logNeedOfFirstAid(event) {
+        const needOfFirstAid = event.target.value;
+        selectedValues['needOfFirstAid'] = needOfFirstAid;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+});
 
 
 
@@ -30,21 +68,6 @@ if ('geolocation' in navigator) {
   }
 
 
-
-
-// const sendMessage = (message) => {
-//   var xhttp = new XMLHttpRequest()
-//   xhttp.onreadystatechange = () => {
-//     if(this.readyState == 4 && this.status == 200){
-//       debugger;
-//       var responseText = JSON.parse(this.responseText)
-//       alert('msg sent')
-//       console.log(responseText)
-//     }
-//   }
-//   xhttp.open('GET', `http://10.10.11.219:8090/SendSMS?username=sarthak&password=12345&phone=9284246443&message=${message}`, true)
-//   xhttp.send()
-// }
 
 
 
@@ -89,7 +112,7 @@ var infer = function() {
                 var Detection = "";
                 if (fire === 'fire') {
 					$('#output').html("").append("Fire Accident Detected");
-					sendEmail(); 
+					sendEmail(selectedValues); 
                     Detection = "Great! We've received your response";
                 // } else {
                 //     console.log("not detected");
@@ -123,7 +146,12 @@ var infer = function() {
 };
 
 
-function sendEmail( ) {
+function sendEmail( selectedValues) {
+	const emailBody = `
+        An Fire accident has been detected with high confidence at latitude: 18.5153, longitude: 73.8217.\n
+        - Incident Scale: ${selectedValues.accidentScale}\n
+        - Need of First Aid: ${selectedValues.needOfFirstAid}\n
+    `;
 	Email.send({
 	  Host: "smtp.elasticemail.com",
 	  Username: "bhushanbpatil3322@gmail.com",
@@ -131,7 +159,7 @@ function sendEmail( ) {
 	  To: "bhushanbpatil3322@gmail.com",
 	  From: "bhushanbpatil3322@gmail.com",
 	  Subject: "Fire Accident Detected",
-	  Body: "An Fire accident has been detected with high confidence at latitude: 18.5153, longitude: 73.8217" 
+	  Body:emailBody
 	}).then(
 	  message => alert("Email sent successfully")
 	);

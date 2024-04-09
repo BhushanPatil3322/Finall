@@ -1,3 +1,28 @@
+// Declare the selectedValues object outside any function or event listener
+var selectedValues = {};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the radio buttons for the scale of accident
+    const majorRadio = document.getElementById('major');
+    const minorRadio = document.getElementById('minor');
+    const mediumRadio = document.getElementById('medium');
+
+    // Add event listeners to each radio button
+    majorRadio.addEventListener('change', logSelectedAccidentScale);
+    minorRadio.addEventListener('change', logSelectedAccidentScale);
+    mediumRadio.addEventListener('change', logSelectedAccidentScale);
+
+    // Function to log the selected scale of accident
+    function logSelectedAccidentScale(event) {
+        const selectedAccidentScale = event.target.value;
+        selectedValues['accidentScale'] = selectedAccidentScale;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+});
+
+
+
 
 var currentLocation;
 // Check if geolocation is supported by the browser
@@ -43,14 +68,19 @@ const sendMessage = (message) => {
 
 
 function sendEmail( ) {
+	const emailBody = `
+	An incident has been detected with high confidence at latitude: 18.5153, longitude: 73.8217.\n
+	- Incident Scale: ${selectedValues.accidentScale}\n
+	
+`;
 	Email.send({
 	  Host: "smtp.elasticemail.com",
 	  Username: "bhushanbpatil3322@gmail.com",
 	  Password: "3FBC67DE3AF96E6C74B932F884D5A95D949A",
-	  To: "bhushanbpatil3322@gmail.com",
+	  To: "sarthaksurve01@gmail.com",
 	  From: "bhushanbpatil3322@gmail.com",
 	  Subject: "Weapon Detected",
-	  Body: "Weapon has been detected with high confidence at latitude: 18.5153, longitude: 73.8217" 
+	  Body:emailBody
 	}).then(
 	  message => alert("Email sent successfully")
 	);
@@ -101,9 +131,12 @@ var infer = function() {
 				var temp=response.predictions
 				console.log("Temp"+temp)
                 if (con >= 0.50) {
+					$('#output').html("Gun Detected");
+
 					alert("Gun detected")
-                    $('#output').html("").append("Gun Detected");
-					sendEmail(); 
+					sendEmail(selectedValues); 
+
+					// sendEmail(); 
                 // }else if(typeof temp === "undefined"){
 				// 	console.log("nppppp");
 				// 	Detection="Not";

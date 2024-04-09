@@ -1,3 +1,68 @@
+// Declare the selectedValues object outside any function or event listener
+var selectedValues = {};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the radio buttons for the scale of accident
+    const majorRadio = document.getElementById('major');
+    const minorRadio = document.getElementById('minor');
+    const mediumRadio = document.getElementById('medium');
+
+    // Add event listeners to each radio button
+    majorRadio.addEventListener('change', logSelectedAccidentScale);
+    minorRadio.addEventListener('change', logSelectedAccidentScale);
+    mediumRadio.addEventListener('change', logSelectedAccidentScale);
+
+    // Function to log the selected scale of accident
+    function logSelectedAccidentScale(event) {
+        const selectedAccidentScale = event.target.value;
+        selectedValues['accidentScale'] = selectedAccidentScale;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+
+    // Get the radio buttons for the type of vehicle in the accident
+    const twoWheelerRadio = document.getElementById('2-wheeler');
+    const fourWheelerRadio = document.getElementById('4-wheeler');
+    const otherVehicleRadio = document.getElementById('other');
+
+    // Add event listeners to each radio button
+    twoWheelerRadio.addEventListener('change', logSelectedVehicleType);
+    fourWheelerRadio.addEventListener('change', logSelectedVehicleType);
+    otherVehicleRadio.addEventListener('change', logSelectedVehicleType);
+
+    // Function to log the selected vehicle type
+    function logSelectedVehicleType(event) {
+        const selectedVehicleType = event.target.value;
+        selectedValues['vehicleType'] = selectedVehicleType;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+
+    // Get the radio buttons for the need of first aid
+    const yesRadio = document.getElementById('yes');
+    const noRadio = document.getElementById('no');
+
+    // Add event listeners to each radio button
+    yesRadio.addEventListener('change', logNeedOfFirstAid);
+    noRadio.addEventListener('change', logNeedOfFirstAid);
+
+    // Function to log the need of first aid
+    function logNeedOfFirstAid(event) {
+        const needOfFirstAid = event.target.value;
+        selectedValues['needOfFirstAid'] = needOfFirstAid;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+});
+
+// Function that needs the updated selected values
+// function functionThatNeedsSelectedValues(selectedValues) {
+//     // Do something with the selected values
+//     // console.log(selectedValues);
+// }
+
+
+
 var currentLocation;
 // Check if geolocation is supported by the browser
 if ('geolocation' in navigator) {
@@ -6,7 +71,7 @@ if ('geolocation' in navigator) {
       // Success callback
       function(position) {
         // Permission granted, load the page normally
-        console.log('Geolocation permission granted:', position);
+        // console.log('Geolocation permission granted:', position);
 		currentLocation = position;
        
 		
@@ -14,14 +79,14 @@ if ('geolocation' in navigator) {
       // Error callback
       function(error) {
         // Permission denied, disable the page
-        console.error('Geolocation permission denied:', error);
+        // console.error('Geolocation permission denied:', error);
         document.body.innerHTML = '<h1>Geolocation permission denied</h1><p>This page requires access to your location.</p>';
 
       }
     );
   } else {
     // Geolocation not supported, disable the page
-    console.error('Geolocation not supported');
+    // console.error('Geolocation not supported');
     document.body.innerHTML = '<h1>Geolocation not supported</h1><p>This page requires a browser that supports geolocation.</p>';
   }
 
@@ -45,7 +110,7 @@ $(function() {
 		debugger;
 		var responseText = JSON.parse(this.responseText)
 		alert('msg sent')
-		console.log(responseText)
+		// console.log(responseText)
 	  }
 	}
 	xhttp.open('GET', `http://192.168.31.102:8090/SendSMS?username=sarthak&password=123123&phone=9881346187&message=${message}`, true)
@@ -53,8 +118,12 @@ $(function() {
   }
   
 
+
+
 var infer = function() {
 	// $('#output').html("Uploding...");
+
+	
 	$("#resultContainer").show();
 	$('html').scrollTop(100000);
 
@@ -87,13 +156,17 @@ var infer = function() {
                 console.log("Confidence" + con); //number
                 console.log("Prediction" + response.predictions[0]); //number
 
-				if(con>0.80){
+
+				
+				
+				if(con>0.70){
 					$('#output').html("").append("Accident Detected");
-					sendEmail(); 
+
+					sendEmail(selectedValues); 
 					// sendMessage("HI");
 					// console.log("SMS SENT")
 					// $('#output').html("").append("Confidence is "+ con );
-				}if(con<0.80){
+				}if(con<0.70){
 					$('#output').html("").append("Accident Not Detected");
 				}
 
@@ -135,14 +208,20 @@ var infer = function() {
 
 
 function sendEmail( ) {
-	Email.send({
+    const emailBody = `
+        An accident has been detected with high confidence at latitude: 18.5153, longitude: 73.8217.\n
+        - Accident Scale: ${selectedValues.accidentScale}\n
+        - Vehicle Type: ${selectedValues.vehicleType}\n
+        - Need of First Aid: ${selectedValues.needOfFirstAid}\n
+    `;
+		Email.send({
 	  Host: "smtp.elasticemail.com",
 	  Username: "bhushanbpatil3322@gmail.com",
 	  Password: "3FBC67DE3AF96E6C74B932F884D5A95D949A",
 	  To: "bhushanbpatil3322@gmail.com",
 	  From: "bhushanbpatil3322@gmail.com",
 	  Subject: "Accident Detected",
-	  Body: "An accident has been detected with high confidence at latitude: 18.5153, longitude: 73.8217" 
+	  Body: emailBody
 	}).then(
 	  message => alert("Email sent successfully")
 	);

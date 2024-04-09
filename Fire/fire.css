@@ -400,11 +400,29 @@ cursor: pointer;
 background-color: rgba(233, 40, 6, 0.664);
 }
 
-
+.options label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  
+  .question{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+     /* Added margin-bottom for gap between questions */
+  }
+  .accident_form{
+      position: absolute;
+      z-index: 10;
+      top: 15rem;
+      left: 10rem;
+  }
 .FireImage{
   position: absolute;
   top: -2.6em;
   left:10rem;
+  opacity: 0.4; 
+
     height:37rem;
   width: 55rem;
 }

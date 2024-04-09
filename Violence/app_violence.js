@@ -1,3 +1,63 @@
+// Declare the selectedValues object outside any function or event listener
+var selectedValues = {};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the radio buttons for the scale of accident
+    const majorRadio = document.getElementById('major');
+    const minorRadio = document.getElementById('minor');
+    const mediumRadio = document.getElementById('medium');
+
+    // Add event listeners to each radio button
+    majorRadio.addEventListener('change', logSelectedAccidentScale);
+    minorRadio.addEventListener('change', logSelectedAccidentScale);
+    mediumRadio.addEventListener('change', logSelectedAccidentScale);
+
+    // Function to log the selected scale of accident
+    function logSelectedAccidentScale(event) {
+        const selectedAccidentScale = event.target.value;
+        selectedValues['accidentScale'] = selectedAccidentScale;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+
+    // Get the radio buttons for the type of vehicle in the accident
+    const twoWheelerRadio = document.getElementById('2-wheeler');
+    const fourWheelerRadio = document.getElementById('4-wheeler');
+    const otherVehicleRadio = document.getElementById('other');
+
+    // Add event listeners to each radio button
+    twoWheelerRadio.addEventListener('change', logSelectedVehicleType);
+    fourWheelerRadio.addEventListener('change', logSelectedVehicleType);
+    otherVehicleRadio.addEventListener('change', logSelectedVehicleType);
+
+    // Function to log the selected vehicle type
+    function logSelectedVehicleType(event) {
+        const selectedVehicleType = event.target.value;
+		console.log(selectedVehicleType)
+        selectedValues['vehicleType'] = selectedVehicleType;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+
+    // Get the radio buttons for the need of first aid
+    const yesRadio = document.getElementById('yes');
+    const noRadio = document.getElementById('no');
+
+    // Add event listeners to each radio button
+    yesRadio.addEventListener('change', logNeedOfFirstAid);
+    noRadio.addEventListener('change', logNeedOfFirstAid);
+
+    // Function to log the need of first aid
+    function logNeedOfFirstAid(event) {
+        const needOfFirstAid = event.target.value;
+        selectedValues['needOfFirstAid'] = needOfFirstAid;
+        // Call the function that needs the updated selected values
+        functionThatNeedsSelectedValues(selectedValues);
+    }
+});
+
+
+
 
 var currentLocation;
 // Check if geolocation is supported by the browser
@@ -49,8 +109,9 @@ const sendMessage = (message) => {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $(function() {
 	//values pulled from query string
-	$('#model').val("violence-not_violence-ziv7b");
-	$('#version').val("2");
+	// $('#model').val("violence-not_violence-ziv7b");
+	$('#model').val("robotics-llwwp");
+	$('#version').val("7");
 	$('#api_key').val("NLUEAD4duB8UcOH0Mcn0");
 
 	setupButtonListeners();
@@ -76,13 +137,15 @@ var infer = function() {
 
 		var temp; // Define temp outside of $.ajax()
 		var flag=0;
+		console.log(selectedValues)
 		$.ajax(settings).then(function(response) {
 			temp = response.predicted_classes;
-			console.log("Output " + temp); 	
-			if(temp=="violence"){
+			console.log(response.predictions[0].confidence); 	
+			if (response.predictions[0].confidence > 0.70) {
 				$('#output').html("").append("Fight Detected");
-				sendEmail(); 
-			}else{
+				sendEmail(selectedValues); 
+			}
+			else{
 				$('#output').html("").append("Fight Not Detected");
 
 			}
@@ -122,6 +185,12 @@ var infer = function() {
 
 
 function sendEmail( ) {
+	const emailBody = `
+	An Fight has been detected with high confidence at latitude: 18.5153, longitude: 73.8217.\n
+	- Fight Scale: ${selectedValues.accidentScale}\n
+	- Fight Type: ${selectedValues.vehicleType}\n
+	- Need of First Aid: ${selectedValues.needOfFirstAid}\n
+`;
 	Email.send({
 	  Host: "smtp.elasticemail.com",
 	  Username: "bhushanbpatil3322@gmail.com",
@@ -129,7 +198,7 @@ function sendEmail( ) {
 	  To: "bhushanbpatil3322@gmail.com",
 	  From: "bhushanbpatil3322@gmail.com",
 	  Subject: "Fight Detected",
-	  Body: "An Fight has been detected with high confidence at latitude: 18.5153, longitude: 73.8217" 
+	  Body: emailBody
 	}).then(
 	  message => alert("Email sent successfully")
 	);
@@ -237,7 +306,6 @@ var getSettingsFromForm = function(cb) {
 		parts.push("&image=" + encodeURIComponent(url));
 
 		settings.url = parts.join("");
-		console.log(settings);
 		cb(settings);
 	}
 };

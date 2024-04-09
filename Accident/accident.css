@@ -402,13 +402,30 @@ input:disabled {
 }
 
 
+.options label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
+.question{
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+   /* Added margin-bottom for gap between questions */
+}
+.accident_form{
+    position: absolute;
+    z-index: 10;
+    top: 15rem;
+    left: 10rem;
+}
 
 
 .CarAccidentImage{
   position: absolute;
   top: 10rem;
   left: 4.5rem;
-  
+  opacity: 0.2; 
 }
 
 

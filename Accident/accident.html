@@ -136,7 +136,9 @@
 				
 				 
 				</label>
-			<button type="submit" value="Run Inference" class="bttn__primary">Submit </button>
+			<button  id="submitBtn" type="submit" value="Run Inference" class="bttn__primary">Submit </button>
+			<!-- <button type="submit" value="Run Inference" class="bttn__primary">Submit</button> -->
+
 			<div class="col-6-m3 relative">
 				<label class="input__label" for="confidence" style="display: none;" >How confident are you?</label>
 				<!-- <i class="fa-regular fa-face-crown"></i> -->
@@ -164,8 +166,62 @@
 	  </form>
 	
 
-
-
+<!-- 	
+	  <form class="accident_form"  action="#">
+		<div class="question">
+			<label for="accident-scale">1. What is the scale of accident?</label>
+			<div class="options">
+				<label><input type="radio" id="major" name="accident-scale" value="Major"> Major</label>
+				<label><input type="radio" id="minor" name="accident-scale" value="Minor"> Minor</label>
+				<label><input type="radio" id="medium" name="accident-scale" value="Medium"> Medium</label>
+			</div>
+		</div>
+		
+		<div class="question">
+			<label for="vehicle-type">2. Type of vehicle in accident?</label>
+			<div class="options">
+				<label><input type="radio" id="2-wheeler" name="vehicle-type" value="2-wheeler"> 2 Wheeler</label>
+				<label><input type="radio" id="4-wheeler" name="vehicle-type" value="4-wheeler"> 4 Wheeler</label>
+				<label><input type="radio" id="other" name="vehicle-type" value="other"> Other</label> 
+			</div>
+		</div>
+		
+		<div class="question">
+			<label for="first-aid">3. Is there need of First Aid?</label>
+			<div class="options">
+				<label><input type="radio" id="yes" name="first-aid" value="yes"> Yes</label>
+				<label><input type="radio" id="no" name="first-aid" value="no"> No</label>
+			</div>
+		</div>
+		
+	</form> -->
+<div class="accident_form">
+    <div class="question">
+        <label for="accident-scale">1. What is the scale of accident?</label>
+        <div class="options">
+            <label><input type="radio" id="major" name="accident-scale" value="Major"> Major</label>
+            <label><input type="radio" id="minor" name="accident-scale" value="Minor"> Minor</label>
+            <label><input type="radio" id="medium" name="accident-scale" value="Medium"> Medium</label>
+        </div>
+    </div>
+    
+    <div class="question">
+        <label for="vehicle-type">2. Type of vehicle in accident?</label>
+        <div class="options">
+            <label><input type="radio" id="2-wheeler" name="vehicle-type" value="2-wheeler"> 2 Wheeler</label>
+            <label><input type="radio" id="4-wheeler" name="vehicle-type" value="4-wheeler"> 4 Wheeler</label>
+            <label><input type="radio" id="other" name="vehicle-type" value="other"> Other</label> 
+        </div>
+    </div>
+    
+    <div class="question">
+        <label for="first-aid">3. Is there need of First Aid?</label>
+        <div class="options">
+            <label><input type="radio" id="yes" name="first-aid" value="yes"> Yes</label>
+            <label><input type="radio" id="no" name="first-aid" value="no"> No</label>
+        </div>
+    </div></div>	
+	
 	  <div>
 		<img class="CarAccidentImage" src="../Images/CarAccident.png" alt="" srcset="">
 	  </div>
